@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "node task.js"
+  },
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
