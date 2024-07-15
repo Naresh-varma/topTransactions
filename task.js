@@ -4,8 +4,9 @@ const URL = 'https://interview.adpeai.com/api/v2/get-task';
 
 function getTransactionsIds(empId, trans) {
   const res = [];
+  const prvYear = new Date().getFullYear() - 1;
   trans.forEach((transaction) => {
-    if (transaction.type === 'alpha' && transaction.employee.id === empId) {
+    if (transaction.type === 'alpha' && transaction.employee.id === empId && transaction.timeStamp.match(prvYear)) {
       res.push(transaction.transactionID);
     }
   })
@@ -78,6 +79,7 @@ function getTransactions() {
 function postTransactionIds(id, transactionIDs) {
   return new Promise((resolve, reject) => {
     if (!id) return reject('No id to make post call');
+    console.log(`-------- ${transactionIDs}`);
     const body = {
       id,
       result: transactionIDs
