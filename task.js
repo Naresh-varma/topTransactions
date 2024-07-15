@@ -79,7 +79,6 @@ function getTransactions() {
 function postTransactionIds(id, transactionIDs) {
   return new Promise((resolve, reject) => {
     if (!id) return reject('No id to make post call');
-    console.log(`-------- ${transactionIDs}`);
     const body = {
       id,
       result: transactionIDs
