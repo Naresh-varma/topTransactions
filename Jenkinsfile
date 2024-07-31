@@ -7,5 +7,12 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        sh 'ls'
+        git(url: 'https://github.com/Naresh-varma/topTransactions', branch: 'main')
+      }
+    }
+
   }
 }
