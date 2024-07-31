@@ -54,7 +54,7 @@ function getLastYearTopEarner(transactions) {
 
   return highestSum;
 }
-// check
+// check 1
 
 /**
  * Makes a http GET request to 'https://interview.adpeai.com/api/v2/get-task'
